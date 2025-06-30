@@ -1,0 +1,139 @@
+* {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: 'Arial', sans-serif;
+    }
+    
+    body {
+        background-color: #f5f7fa;
+        color: #333;
+        height: 100vh;
+        overflow: hidden;
+    }
+    
+    .container {
+        max-width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        padding: 20px;
+        position: relative;
+    }
+    
+    .logo {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #4a6fa5;
+        margin-bottom: 10px;
+    }
+    
+    .tagline {
+        font-size: 1.2rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+    
+    .swipe-instruction {
+        position: absolute;
+        bottom: 30px;
+        color: #888;
+        font-size: 0.9rem;
+        animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+        0% { opacity: 0.6; }
+        50% { opacity: 1; }
+        100% { opacity: 0.6; }
+    }
+    
+    .family-members {
+        display: flex;
+        width: 100%;
+        max-width: 500px;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+        padding: 20px 0;
+        margin: 20px 0;
+    }
+    
+    .family-members::-webkit-scrollbar {
+        display: none;
+    }
+    
+    .member-card {
+        flex: 0 0 80%;
+        scroll-snap-align: center;
+        background: white;
+        border-radius: 15px;
+        padding: 30px;
+        margin: 0 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .member-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+    }
+    
+    .member-icon {
+        font-size: 3.5rem;
+        margin-bottom: 15px;
+    }
+    
+    .member-name {
+        font-size: 1.5rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+    }
+    
+    .member-desc {
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    #Hery { color: #4a6fa5; }
+    #Alina { color: #d45d79; }
+    #Tricia { color: #6bbf8a; }
+    #Lala { color: #f4a261; }
+    
+    .selected {
+        border: 3px solid #4a6fa5;
+    }
+    
+    .continue-btn {
+        background-color: #4a6fa5;
+        color: white;
+        border: none;
+        padding: 12px 30px;
+        border-radius: 30px;
+        font-size: 1rem;
+        font-weight: bold;
+        cursor: pointer;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s;
+    }
+    
+    .continue-btn.active {
+        opacity: 1;
+        pointer-events: all;
+    }
+    
+    .continue-btn:hover {
+        background-color: #3a5a8f;
+    }

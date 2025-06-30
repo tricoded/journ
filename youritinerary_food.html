@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Family Trip Itinerary</title>
+  <link rel="stylesheet" href="stylefood.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;500&display=swap');  
+  </style>
+</head>
+
+<body>
+  <div class="navbar">
+    <a href="youritinerary_home.html">Home</a>
+    <a href="youritinerary_accomodation.html">Accommodation</a>
+    <a href="youritinerary_attractions.html">Attractions</a>
+    <a href="youritinerary_food.html" class="active">Food</a>
+    <a href="youritinerary_fyp.html" id="forYouTab">For You</a>
+  </div>
+<h1>Food Itinerary</h1>
+  <div class="member-section">
+    <h2>FOOD</h2>
+    <div class="filter-container">
+      <select name="cuisine-filter" class="filter">
+        <option value="" disabled selected>Cuisine</option>
+        <option value="">All Cuisines</option>
+        <option value="Chinese">Chinese</option>
+        <option value="Japanese">Japanese</option>
+        <option value="Mexican">Mexican</option>
+        <option value="Thai">Thai</option>
+        <option value="Italian">Italian</option>
+        <option value="Indian">Indian</option>
+      </select>
+
+      <select name="price-filter" class="filter">
+        <option value="" disabled selected>Price</option>
+        <option value="">All Prices</option>
+        <option value="CHF 10-20">CHF 10-20</option>
+        <option value="CHF 20-30">CHF 20-30</option>
+        <option value="CHF 30-40">CHF 30-40</option>
+        <option value="CHF 50-60">CHF 50-60</option>
+        <option value="CHF 100+">CHF 100+</option>
+      </select>
+
+      <select name="rating-filter" class="filter">
+  <option value="" disabled selected>Rating</option>
+  <option value="">All Ratings</option>
+  <option value="3-4">3–4</option>
+  <option value="4-5">4–5</option>
+  <option value="5">5</option>
+</select>
+
+    </div>
+    
+    <div class="collapsible-content" id="food-list">
+      <div class="item">
+        <h4>Restaurant Xiang Yu 湘遇</h4>
+        <p><strong>Cuisine:</strong> Chinese</p>
+        <p><strong>Rating:</strong> 4.5 ⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Tuesday-Sunday 11.30 am-2.00 pm, 5.40 pm-10.00 pm</p>
+        <p><a href="https://maps.app.goo.gl/6jEh6BdJB5SHJLL19" target="_blank">📍 View Location</a></p>
+        <div class="family-tags"></div>
+      </div>
+
+      <div class="item">
+        <h4>Jiaxiang Restaurant 家湘</h4>
+        <p><strong>Cuisine:</strong> Chinese</p>
+        <p><strong>Rating:</strong> 5.0 ⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Tuesday-Sunday 11:45 am–2:15 pm, 5:45–10:15 pm</p>
+        <p><a href="https://maps.app.goo.gl/xNFfcynkLQhfQwQA8" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Pékin Palace</h4>
+        <p><strong>Cuisine:</strong> Chinese</p>
+        <p><strong>Rating:</strong> 4.2 ⭐</p>
+        <p><strong>Price:</strong> CHF 50-60</p>
+        <p><strong>Opening Hours:</strong> Monday-Friday 10:30 am-2:30 pm, 5:30-10:30 pm; Saturday-Sunday 11:00 am-3:00
+          pm, 5:30-10:30 pm</p>
+        <p><a href="https://maps.app.goo.gl/soNf34VY8xw1Q1uN6" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Kozan</h4>
+        <p><strong>Cuisine:</strong> Japanese</p>
+        <p><strong>Rating:</strong> 4.7 ⭐</p>
+        <p><strong>Price:</strong> CHF 100+</p>
+        <p><strong>Opening Hours:</strong> Sunday-Monday Closed; Tuesday-Saturday 12–2:30 pm, 7–11 pm</p>
+        <p><a href="https://maps.app.goo.gl/J964Tq1LyHSqtPB87" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Nagomi Sushi</h4>
+        <p><strong>Cuisine:</strong> Japanese</p>
+        <p><strong>Rating:</strong> 4.7 ⭐</p>
+        <p><strong>Price:</strong> CHF 100+</p>
+        <p><strong>Opening Hours:</strong> Sunday-Monday Closed; Tuesday-Saturday 12–2:00 pm, 7–10 pm</p>
+        <p><a href="https://maps.app.goo.gl/xhAT5Nv1yGcjBWW9A" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Nagomi Tempura</h4>
+        <p><strong>Cuisine:</strong> Japanese</p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF 100+</p>
+        <p><strong>Opening Hours:</strong> Sunday-Monday Closed; Tuesday-Saturday 12–2:00 pm, 7–10 pm</p>
+        <p><a href="https://maps.app.goo.gl/rLADVYmim5kXwyBH9" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Nagomi Ramen</h4>
+        <p><strong>Cuisine:</strong> Japanese</p>
+        <p><strong>Rating:</strong> 4.2 ⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Sunday-Monday Closed; Tuesday-Saturday 12–2:00 pm, 7–10 pm</p>
+        <p><a href="https://maps.app.goo.gl/rLADVYmim5kXwyBH9" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Anzoo Sushi Bar</h4>
+        <p><strong>Cuisine:</strong> Japanese</p>
+        <p><strong>Rating:</strong> 4.9 ⭐</p>
+        <p><strong>Price:</strong> CHF 20-30</p>
+        <p><strong>Opening Hours:</strong> Wednesday-Saturday 11.00 am–7.30 pm</p>
+        <p><a href="https://maps.app.goo.gl/hYAMRpBm14p4b68q8" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>El Catrín</h4>
+        <p><strong>Cuisine:</strong> Mexican</p>
+        <p><strong>Rating:</strong> 4.5⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Monday-Tuesday Closed; Wednesday 18:00–23:30; Thursday-Friday 12:00–14:00,
+          18:00–23:30; Saturday-Sunday 11:45–14:15, 18:00–23:30</p>
+        <p><a href="https://maps.app.goo.gl/Wk91GxxisH9U74rR7" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Baï Toey</h4>
+        <p><strong>Cuisine:</strong> Thai</p>
+        <p><strong>Rating:</strong> 4.5⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Monday-Friday 12:00–14:00, 19:00–22:00; Saturday-Sunday 19:00-22:00</p>
+        <p><a href="https://maps.app.goo.gl/sHA1haEDvpkcVA3F8" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Soï</h4>
+        <p><strong>Cuisine:</strong> Thai</p>
+        <p><strong>Rating:</strong> 4.5⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Sunday-Monday Closed; Tuesday-Friday 12:00–14:00, 18:30–22:00; Saturday
+          18:30-22:00</p>
+        <p><a href="https://maps.app.goo.gl/CRAVWAcQiUtdYcU9A" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Buvette des Bains</h4>
+        <p><strong>Cuisine:</strong> Fondue</p>
+        <p><strong>Rating:</strong> 4.3⭐</p>
+        <p><strong>Price:</strong> CHF 10-30</p>
+        <p><strong>Opening Hours:</strong> Monday-Sunday 07:00–22:30</p>
+        <p><a href="https://maps.app.goo.gl/733MKfvffAu92DCT9" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Café du Soleil</h4>
+        <p><strong>Cuisine:</strong> Fondue</p>
+        <p><strong>Rating:</strong> 4.5⭐</p>
+        <p><strong>Price:</strong> CHF 10-30</p>
+        <p><strong>Opening Hours:</strong> Monday-Sunday 07:00–23:00</p>
+        <p><a href="https://maps.app.goo.gl/eRH13wmW7KRR4qEfA" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Little India</h4>
+        <p><strong>Cuisine:</strong> Indian</p>
+        <p><strong>Rating:</strong> 4.3⭐</p>
+        <p><strong>Price:</strong> CHF 20-30</p>
+        <p><strong>Opening Hours:</strong> Monday Closed; Tuesday-Friday 12:00–14:00, 6:30–20:30; Saturday-Sunday
+          18:30-20:30</p>
+        <p><a href="https://maps.app.goo.gl/WLXWmUqpp4a4pysA8" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Brasserie Hôtel-de-Ville</h4>
+        <p><strong>Cuisine:</strong> Swiss</p>
+        <p><strong>Rating:</strong> 4.2⭐</p>
+        <p><strong>Price:</strong> CHF 50-60</p>
+        <p><strong>Opening Hours:</strong> Monday-Friday 08:00–00:00; Saturday-Sunday 10:00-00:00</p>
+        <p><a href="https://maps.app.goo.gl/3bkm1R1NQPKqj7m69" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Restaurant Les Armures</h4>
+        <p><strong>Cuisine:</strong> Swiss</p>
+        <p><strong>Rating:</strong> 4.6⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Monday-Sunday 12:00–22:30</p>
+        <p><a href="https://maps.app.goo.gl/nxKfmciULRxA9vcP7" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Café de Paris - Chez Boubier</h4>
+        <p><strong>Cuisine:</strong> French</p>
+        <p><strong>Rating:</strong> 4.4⭐</p>
+        <p><strong>Price:</strong> CHF 30-40</p>
+        <p><strong>Opening Hours:</strong> Monday-Sunday, 8:30–23:00</p>
+        <p><a href="https://maps.app.goo.gl/NxjwXGkXbTdkaK1t9" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Café de la Limite</h4>
+        <p><strong>Cuisine:</strong> French</p>
+        <p><strong>Rating:</strong> 4.5⭐</p>
+        <p><strong>Price:</strong> CHF 20-30</p>
+        <p><strong>Opening Hours:</strong> Monday-Sunday Closed; Tuesday-Saturday 11:00–14:15, 18:30–22:00</p>
+        <p><a href="https://maps.app.goo.gl/PUJXqGoGj97xTSz48" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Saj Eat</h4>
+        <p><strong>Cuisine:</strong> Syrian</p>
+        <p><strong>Rating:</strong> 4.7⭐</p>
+        <p><strong>Price:</strong> CHF 10-20</p>
+        <p><strong>Opening Hours:</strong> Monday-Wednesday 10 AM–11 PM; Thursday-Saturday 10 AM–12 AM; Sunday
+          10 AM–10 PM</p>
+        <p><a href="https://maps.app.goo.gl/rMTMFxRKHqdLzyDA7" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Parfums de Beyrouth</h4>
+        <p><strong>Cuisine:</strong> Lebanese</p>
+        <p><strong>Rating:</strong> 4.4⭐</p>
+        <p><strong>Price:</strong> CHF 10-20</p>
+        <p><strong>Opening Hours:</strong> Monday-Friday 12–2 AM, 11 AM–12 AM; Saturday-Sunday 12–6 AM, 11 AM–12 AM</p>
+        <p><a href="https://maps.app.goo.gl/MJtycj584UnpZRLR6" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Tita Dimps</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Thuy hang</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Le bahn mi</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Rosa morena</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Inglewood</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Arlecchino</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>La ruota</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Luigia</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Da tonino</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Pierre & Jean</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Le Saint Honore</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Boulangerie patisserie Eric Emery</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>La boulangerie des grotes / LBDG</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Chou</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Bali Palace</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Plainpalais Market</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Auer</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Paves de Geneve</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Les tilleuls</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Dario's</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4>Ristorante biccadasse</h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+
+      <div class="item">
+        <h4></h4>
+        <p><strong>Cuisine:</strong> </p>
+        <p><strong>Rating:</strong> ⭐</p>
+        <p><strong>Price:</strong> CHF </p>
+        <p><strong>Opening Hours:</strong> </p>
+        <p><a href="" target="_blank">📍 View Location</a></p>
+      </div>
+    </div>
+    <button class="toggle-button" onclick="toggleCollapse('food-list', this)">Show More</button>
+  </div>
+
+  <script src="toggle.js"></script>
+  <script src="foodfilter.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,164 @@
+:root {
+  --cream: #F8F5F0;
+  --taupe: #E8E0D9;
+  --charcoal: #2A2A2A;
+  --gold: #C0A062;
+  --soft-black: #1A1A1A;
+  --light-gray: #E5E5E5;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  background-color: var(--cream);
+  color: var(--charcoal);
+  margin: 0;
+  padding: 0;
+}
+
+.navbar {
+  background-color: var(--cream);
+  padding: 20px 10%;
+  display: flex;
+  justify-content: center;
+  border-bottom: 1px solid var(--taupe);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: var(--charcoal);
+  padding: 10px 20px;
+  margin: 0 5px;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar a:after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 1px;
+  bottom: 8px;
+  left: 20px;
+  background-color: var(--gold);
+  transition: width 0.3s ease;
+}
+
+.navbar a:hover:after {
+  width: calc(100% - 40px);
+}
+
+.navbar a.active {
+  color: var(--gold);
+  font-weight: 500;
+}
+
+.navbar a.active:after {
+  width: calc(100% - 40px);
+}
+
+h1 {
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-align: center;
+  margin: 3rem 0;
+  color: var(--graphite);
+  letter-spacing: -0.02em;
+}
+
+.hotel-card {
+  background-color: white;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border: 1px solid var(--clay);
+  transition: all 0.3s ease;
+  position: relative;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+.hotel-card:hover {
+  transform: translateY(-0.3rem);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+.hotel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.hotel-header h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.5rem;
+  margin: 0;
+  color: var(--graphite);
+}
+
+.date-tag {
+  background-color: var(--clay);
+  color: var(--graphite);
+  padding: 0.3rem 0.8rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.03em;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.hotel-card p {
+  margin: 0.5rem 0;
+  color: var(--graphite);
+}
+
+.hotel-card p:before {
+  margin-right: 0.5rem;
+}
+
+footer {
+  text-align: center;
+  margin: 3rem 0;
+  color: var(--graphite);
+  font-family: 'Montserrat', sans-serif;
+  font-size: 0.9rem;
+}
+
+#recommendation-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 1rem;
+  }
+  
+  .navbar {
+    padding: 1rem;
+    flex-wrap: wrap;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .hotel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .date-tag {
+    margin-top: 0.5rem;
+  }
+  
+  #recommendation-list {
+    grid-template-columns: 1fr;
+  }
+}

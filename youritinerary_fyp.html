@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>For You | Family Trip Planner</title>
+  <link rel="stylesheet" href="stylehome.css">
+  <style>
+    /* Add these new styles */
+    .profile-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      padding: 15px;
+      background-color: rgba(74, 111, 165, 0.1);
+      border-radius: 8px;
+    }
+    .profile-icon {
+      font-size: 3rem;
+      margin-right: 20px;
+    }
+    .profile-info h2 {
+      margin: 0;
+      color: #4a6fa5;
+    }
+    .profile-type {
+      font-style: italic;
+      color: #666;
+    }
+    .recommendation-section {
+      margin-top: 30px;
+    }
+    .recommendation-category {
+      margin: 20px 0;
+    }
+    .recommendation-category h3 {
+      border-bottom: 2px solid #4a6fa5;
+      padding-bottom: 5px;
+    }
+    .personalized-item {
+      position: relative;
+    }
+    .recommendation-score {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background-color: #4a6fa5;
+      color: white;
+      padding: 3px 8px;
+      border-radius: 12px;
+      font-size: 0.8rem;
+    }
+    .why-love {
+      font-weight: bold;
+      color: #d45d79;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="youritinerary_home.html">Home</a>
+    <a href="youritinerary_accomodation.html">Accommodation</a>
+    <a href="youritinerary_attractions.html">Attractions</a>
+    <a href="youritinerary_food.html">Food</a>
+    <a href="youritinerary_fyp.html" class="active" id="forYouTab">For You</a>
+  </div>
+
+  <div class="member-section" id="personalized-content">
+    <!-- Profile header will be inserted here by JavaScript -->
+    <div id="profile-display"></div>
+    
+    <!-- Dynamic content sections -->
+    <div class="recommendation-section">
+      <div class="recommendation-category">
+        <h3>Top Attractions For You</h3>
+        <div id="attraction-recommendations" class="collapsible-content">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+      
+      <div class="recommendation-category">
+        <h3>Dining Recommendations</h3>
+        <div id="food-recommendations" class="collapsible-content">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+      
+      <div class="recommendation-category">
+        <h3>Daily Itinerary Suggestions</h3>
+        <div id="itinerary-recommendations" class="collapsible-content">
+          <!-- Will be populated by JavaScript -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="profiles.js"></script>
+  <script src="recommendation-engine.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const role = localStorage.getItem('familyRole') || 'mom';
+      document.body.classList.add(role + '-theme');
+      
+      // Update tab text
+      document.getElementById('forYouTab').textContent = `For ${role.charAt(0).toUpperCase() + role.slice(1)}`;
+      
+      // Initialize recommendation engine
+      const engine = new RecommendationEngine(familyProfiles);
+      engine.loadAttractionsData();
+      
+      // Display profile header
+      const profile = familyProfiles[role];
+      const profileDisplay = document.getElementById('profile-display');
+      profileDisplay.innerHTML = `
+        <div class="profile-header">
+          <div class="profile-icon">${getMemberIcon(role)}</div>
+          <div class="profile-info">
+            <h2>${role.charAt(0).toUpperCase() + role.slice(1)}'S RECOMMENDATIONS</h2>
+            <p class="profile-type">${profile.type} • ${profile.preferences.pace} Pace • ${profile.preferences.budget} Budget</p>
+            <p>Likes: ${profile.preferences.attractions.join(', ')}</p>
+          </div>
+        </div>
+      `;
+      
+      // Display attraction recommendations
+      const attractionRecs = engine.getRecommendations(role, 3);
+      const attractionContainer = document.getElementById('attraction-recommendations');
+      attractionContainer.innerHTML = attractionRecs.map(att => `
+        <div class="item personalized-item">
+          <h4>${att.name}</h4>
+          <p><span class="why-love">Why you'll love it:</span> ${generateWhyLove(att, role)}</p>
+          <p><strong>Type:</strong> ${att.type} • <strong>Rating:</strong> ${att.rating} ⭐</p>
+          <div class="recommendation-score">${Math.round(att.score)}% match</div>
+        </div>
+      `).join('');
+      
+      // Display food recommendations (you'll need to implement loadFoodData similarly)
+      const foodRecs = engine.getFoodRecommendations(role, 3);
+      const foodContainer = document.getElementById('food-recommendations');
+      foodContainer.innerHTML = foodRecs.map(food => `
+        <div class="item personalized-item">
+          <h4>${food.name}</h4>
+          <p><span class="why-love">Why you'll love it:</span> ${generateWhyLove(food, role)}</p>
+          <p><strong>Cuisine:</strong> ${food.cuisine} • <strong>Price:</strong> ${food.price}</p>
+          <div class="recommendation-score">${Math.round(food.score)}% match</div>
+        </div>
+      `).join('');
+      
+      // Helper functions
+      function getMemberIcon(member) {
+        const icons = { dad: '👨', mom: '👩', sister: '👧', brother: '👦' };
+        return icons[member] || '👤';
+      }
+      
+      function generateWhyLove(item, role) {
+        const profile = familyProfiles[role];
+        const reasons = [];
+        
+        // Attraction reasons
+        if (item.type) {
+          if (profile.preferences.attractions.includes(item.type)) {
+            reasons.push(`Perfect ${item.type.toLowerCase()} experience`);
+          }
+          if (item.rating >= 4.5) {
+            reasons.push('Highly rated by visitors');
+          }
+          if (item.price.includes('Free') && profile.preferences.budget === '$') {
+            reasons.push('Great free option');
+          }
+        }
+        
+        // Food reasons
+        if (item.cuisine) {
+          if (profile.preferences.food.includes(item.cuisine)) {
+            reasons.push(`Authentic ${item.cuisine.toLowerCase()} cuisine`);
+          }
+          if (item.price === profile.preferences.budget) {
+            reasons.push('Fits your budget perfectly');
+          }
+        }
+        
+        return reasons.length > 0 ? reasons.join(' • ') : 'Specially selected for you';
+      }
+    });
+  </script>
+</body>
+</html>

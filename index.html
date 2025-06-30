@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Family Travel Planner</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background-color: #000000;
+            color: white;
+            height: 100vh;
+            overflow: hidden;
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .welcome-container {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+        
+        .logo {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out 0.5s forwards;
+        }
+        
+        .tagline {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s ease-out 1s forwards;
+        }
+        
+        .family-illustration {
+            width: 320px;
+            height: 320px;
+            margin-bottom: 40px;
+            position: relative;
+            opacity: 0;
+            animation: fadeIn 1s ease-out 1.5s forwards;
+        }
+        
+        .family-member {
+            position: absolute;
+            opacity: 0;
+            animation: bounceIn 0.8s ease-out forwards, float 3s ease-in-out 2.8s infinite;
+            will-change: transform;
+        }
+        
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            margin-top: 30px;
+            overflow: hidden;
+            opacity: 0;
+            animation: fadeIn 0.5s ease-out 2s forwards;
+        }
+        
+        .loading-progress {
+            height: 100%;
+            width: 0%;
+            background-color: white;
+            border-radius: 2px;
+            animation: load 3s ease-out 2.5s forwards;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes bounceIn {
+            0% {
+                opacity: 0;
+                transform: scale(0.3);
+            }
+            50% {
+                opacity: 1;
+                transform: scale(1.1);
+            }
+            70% {
+                transform: scale(0.9);
+            }
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+        
+        @keyframes load {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <div class="logo">Family Travel Planner</div>
+        <div class="tagline">Making vacation planning fun for the whole family</div>
+        
+        <div class="family-illustration" id="family-container">
+            <!-- Emojis will be added dynamically by JavaScript -->
+        </div>
+        
+        <div class="loading-bar">
+            <div class="loading-progress"></div>
+        </div>
+    </div>
+
+    <script>
+        // Array of family emojis (16 total)
+        const emojis = [
+            '👨', '👩', '👧', '👦', 
+            '👩‍🍳', '👩‍🔬', '🤴', '🏃‍♂️',
+            '💃', '🧗‍♀️', '👨‍🚒', '🤽‍♂️',
+            '👨‍⚕️', '👩‍⚖️', '🧚‍♀️', '🧜‍♂️'
+        ];
+
+        const container = document.getElementById('family-container');
+        const containerSize = 320;
+        const gridSize = 4; // 4x4 grid for 16 emojis
+        const cellSize = containerSize / gridSize;
+        const padding = cellSize * 0.2; // 20% padding within each cell
+
+        // Create positions in a grid with slight randomness
+        const positions = [];
+        for (let row = 0; row < gridSize; row++) {
+            for (let col = 0; col < gridSize; col++) {
+                positions.push({
+                    x: col * cellSize + padding + Math.random() * (cellSize - padding * 2),
+                    y: row * cellSize + padding + Math.random() * (cellSize - padding * 2)
+                });
+            }
+        }
+
+        // Shuffle positions for more organic distribution
+        positions.sort(() => Math.random() - 0.5);
+
+        // Create and position emojis
+        emojis.forEach((emoji, index) => {
+            const emojiElement = document.createElement('div');
+            emojiElement.className = 'family-member';
+            emojiElement.textContent = emoji;
+            
+            // Get position from our grid
+            const pos = positions[index];
+            
+            // Random size between 1.8rem and 3.5rem
+            const size = Math.random() * 1.7 + 1.8;
+            
+            // Random rotation (-15deg to 15deg)
+            const rotation = Math.random() * 30 - 15;
+            
+            // Apply styles
+            emojiElement.style.left = `${pos.x}px`;
+            emojiElement.style.top = `${pos.y}px`;
+            emojiElement.style.fontSize = `${size}rem`;
+            emojiElement.style.transform = `rotate(${rotation}deg)`;
+            
+            // Staggered animation delay
+            emojiElement.style.animationDelay = `${2 + (index * 0.1)}s, ${2.8 + (index * 0.1)}s`;
+            
+            container.appendChild(emojiElement);
+        });
+
+        // After all animations complete (about 5.5 seconds), redirect to selection page
+        setTimeout(function() {
+            window.location.href = 'selection.html';
+        }, 5500);
+    </script>
+</body>
+</html>

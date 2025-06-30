@@ -1,0 +1,161 @@
+body {
+    font-family: "DM Sans", sans-serif;
+    line-height: 1.6;
+    background: linear-gradient(-45deg, #000000, #a9a9b2, #bee3e9, #ede9d9, #808080);
+    background-size: 300% 300%;
+    animation: gradientMove 8s ease infinite;
+    margin: 0;
+    padding: 20px;
+}
+.member-section {
+    background: #ffffff75;
+    margin: 10%;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+h1 {
+
+  margin: 0 auto;
+  padding: 40px 20px;
+  font-size: 2rem;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+h2 {
+    border-bottom: 2px solid #ccc;
+    padding-bottom: 5px;
+}
+.item {
+    margin-bottom: 20px;
+}
+.item h4 {
+    margin: 0;
+}
+.item p {
+    margin: 4px 0;
+}
+a {
+    color: #0077cc;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+.section-title {
+    margin-top: 20px;
+    color: #444;
+}
+
+.collapsible-content {
+  max-height: 800px;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+}
+
+.collapsible-content.expanded {
+  max-height: none;
+}
+
+.toggle-button {
+  display: block;
+  margin: 10px auto 30px auto;
+  padding: 8px 16px;
+  background-color: #000000;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+
+
+.navbar {
+  background-color: #ffffff55;
+  padding: 10px;
+  border-radius: 10px; 
+  width: 80%;
+  margin: 0 auto; 
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #333;
+  padding: 10px 15px;
+  display: inline-block;
+  border-radius: 8px; /* a bit rounded */
+  margin-right: 5px;
+}
+
+.navbar a:hover {
+  background-color: #dedede;
+}
+
+.navbar a.active {
+  background-color: #000000;
+  color: white;
+}
+
+.filter-container {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.filter {
+  padding: 9px 13px;
+  border: 1px solid #00000064;
+  border-radius: 8px;
+  background-color: #ffffff7f;
+  font-size: 14px;
+  cursor: pointer;
+  transition: border 0.3s;
+  font-family: "DM Sans", sans-serif;
+  margin-bottom: 25px;
+}
+
+.filter:focus {
+  border-color: #000000;
+  outline: none;
+}
+
+/* Personalized content styles */
+.personalized-item {
+    background-color: rgba(var(--primary-color-rgb), 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 15px;
+    margin-bottom: 20px;
+    border-radius: 0 8px 8px 0;
+}
+
+/* Theme variables - add to your existing theme classes */
+.mom-theme {
+    --primary-color: #e84393;
+    --primary-color-rgb: 232, 67, 147;
+}
+
+.dad-theme {
+    --primary-color: #0984e3;
+    --primary-color-rgb: 9, 132, 227;
+}
+
+.sister-theme {
+    --primary-color: #6c5ce7;
+    --primary-color-rgb: 108, 92, 231;
+}
+

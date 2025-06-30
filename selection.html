@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Family Travel Planner | Welcome</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=DM+Serif+Text:ital@0;1&family=Inter:wght@100..900&family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Lusitana:wght@400;700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+    </style>
+    <link rel="stylesheet" href="styleselection.css">
+</head>
+<body>
+    <div class="container">
+        <div class="logo">4 Musketeers vs The World</div>
+        <div class="tagline">Plan your family vacation together</div>
+        
+        <div class="family-members" id="familyMembers">
+            <div class="member-card" data-role="Hery" id="Hery">
+                <div class="member-icon">👨‍💼</div>
+                <div class="member-name">Hery</div>
+                <div class="member-desc">View and manage our family itinerary</div>
+            </div>
+            
+            <div class="member-card" data-role="Alina" id="Alina">
+                <div class="member-icon">👩‍🎨</div>
+                <div class="member-name">Alina</div>
+                <div class="member-desc">Check activities and packing lists</div>
+            </div>
+            
+            <div class="member-card" data-role="Tricia" id="Tricia">
+                <div class="member-icon">👩‍🔬</div>
+                <div class="member-name">Tricia</div>
+                <div class="member-desc">See fun activities planned for me</div>
+            </div>
+            
+            <div class="member-card" data-role="Lala" id="Lala">
+                <div class="member-icon">👩‍🎓</div>
+                <div class="member-name">Lala</div>
+                <div class="member-desc">Find out what adventures await</div>
+            </div>
+        </div>
+        
+        <button class="continue-btn" id="continueBtn">Continue as <span id="selectedRole"></span></button>
+        
+        <div class="swipe-instruction">Swipe left/right to choose your role</div>
+    </div>
+
+    <script src="scriptselection.js"></script>
+</body>
+</html>
